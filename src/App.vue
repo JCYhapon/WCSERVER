@@ -1,228 +1,99 @@
 <template>
-<div class="container">
-  <div class="header">
-    <div class="full-name">
-      <span class="first-name">John Carlo</span> 
-      <span class="last-name">Yhapon</span>
+  <header>
+  <div id="app">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">VueJs</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <!----->
+          <router-link class="nav-link" to="/Home">Home</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/Blog">Blog</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/Gallery">Gallery</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/AboutMe">About Me</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/Contact">Contact</router-link>
+        </li>
+
+        
+        
+        <!----->
+      </ul>
     </div>
-    <div class="contact-info">
-      <span class="email">Email: </span>
-      <span class="email-val">yhaponjc@gmail.com</span>
-      <span class="separator"></span>
-      <span class="phone">Phone: </span>
-      <span class="phone-val">0998-939-7465</span>
-    </div>
-    
-    <div class="about">
-      <span class="position">2nd Year Student (Information Technology) </span>
-      <span class="desc">
-        I am a 2nd year student at Holy Angel University with a specialization of Website Development. Working student at IJCP Company as an Data Entry.
-      </span>
-    </div>
   </div>
-  <div>
-    <Details></Details>
+</nav>
+    <router-view/>
   </div>
-  <br>
-  <div>
-    <Section></Section>
-  </div>
-  <br>
-  <div>
-    <Section1></Section1>
-  </div>
-  <br>
-  <div>
-    <Section2></Section2>
-  </div>
-  <br>
-  <div>
-    <Section3></Section3>
-  </div>
-  <br>
-  <div>
-    <Section4></Section4>
-  </div>
-  
-</div>
+  </header>
 </template>
 
 <script>
-import Details from './Details.vue'
-import Section from './Section.vue'
-import Section1 from './Section1.vue'
-import Section2 from './Section2.vue'
-import Section3 from './Section3.vue'
-import Section4 from './Section4.vue'
 export default {
-  components: {
-    Details,
-    Section,
-    Section1,
-    Section2,
-    Section3,
-    Section4
-  },
-  name: 'app',
-  data () {
-    return {
-      msg: ''
-    }
-  }
+  name: 'App'
 }
 </script>
 
 <style>
-* {
+body{
   margin: 0;
+  margin-left: 5px;
+  margin-right: px;
   padding: 0;
-  box-sizing: border-box;
+  background: url(./assets/background.jpg) no-repeat;
+  background-size: cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: inherit;
+  line-height: 1.2em;
+  list-style: none;
+  text-decoration: none;
+  vertical-align: baseline;
 }
-html {
-  height: 100%;  
-}
-
-body {
-  min-height: 100%;  
-  background: #eee;
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  color: #222;
-  font-size: 14px;
-  line-height: 26px;
-  padding-bottom: 50px;
-}
-
+/**********Home.vue**********/
 .container {
-  max-width: 700px;   
-  background: #fff;
-  margin: 0px auto 0px; 
-  box-shadow: 1px 1px 2px #DAD7D7;
-  border-radius: 3px;  
+  width: 550px;
+  background: rgba(0, 0, 0, 0.4);
   padding: 40px;
-  margin-top: 50px;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.header {
-  margin-bottom: 30px;
-  
-}.full-name {
-    font-size: 40px;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-  }
-  
-  .first-name {
-    font-weight: 700;
-  }
-  
-  .last-name {
-    font-weight: 300;
-  }
-  
-  .contact-info {
-    margin-bottom: 20px;
-  }
-  
-  .email ,
-  .phone {
-    color: #999;
-    font-weight: 300;
-  } 
-  
-  .separator {
-    height: 10px;
-    display: inline-block;
-    border-left: 2px solid #999;
-    margin: 0px 10px;
-  }
-  
-  .position {
-    font-weight: bold;
-    display: inline-block;
-    margin-right: 10px;
-    text-decoration: underline;
-  }
+.container-img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 
+}
 
+.container h1 {
+  font-size: 40px;
+  letter-spacing: 4px;
+  font-weight: 100;
+}
 
-.details {
-  line-height: 20px;
-  
-}.section {
-    margin-bottom: 40px;  
-  }
-  
-  .section:last-of-type {
-    margin-bottom: 0px;  
-  }
-  
-  .section__title {
-    letter-spacing: 2px;
-    color: #586de2;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-  
-  .section__list-item {
-    margin-bottom: 40px;
-  }
-  
-  .section__list-item:last-of-type {
-    margin-bottom: 0;
-  }
-  
-  .left ,
-  .right {
-    vertical-align: top;
-    display: inline-block;
-  }
-  
-  .left {
-    width: 60%;    
-  }
-  
-  .right {
-    text-align: right;
-    width: 39%;    
-  }
-  
-  .name {
-    font-weight: bold;
-  }
-  
-  a {
-    text-decoration: none;
-    color: rgb(138, 67, 67);
-    font-style: italic;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-    color: #000;
-  }
-    
-  .skills__item {
-    margin-bottom: 10px;  
-  }
-  
-.skills__item .right 
-    input {
-      display: none;
-    }
-  
-    
-    label {
-      display: inline-block;  
-      width: 20px;
-      height: 20px;
-      background: #C3DEF3;
-      border-radius: 20px;
-      margin-right: 3px;
-    }
-    
-    input:checked + label {
-      background: #d81010;
-    }
+.container h2 {
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 100;
+
+}
+
+.container p {
+  text-align: justify;
+}
+
 </style>
